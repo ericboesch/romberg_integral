@@ -58,7 +58,7 @@ class RombergIntegral
 
   # {#integral} must exit after calling the block this many times. This
   # number is rounded up to the next value of the form <tt>2**n +
-  # 1</tt> which is also greater than or equal to +min_call_cnt+. For
+  # 1</tt> which is also greater than or equal to {#min_call_cnt}. For
   # example, a value of 50 is treated like <tt>65 = 2**6 + 1</tt>.
   #
   # Default value is 65537.
