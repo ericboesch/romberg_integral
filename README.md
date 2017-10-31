@@ -35,7 +35,7 @@ Or install it yourself as:
     estimate = ri.integral(1, 10) { |x| 1.0/x }
     actual = Math.log 10
     error = (actual - estimate.value).abs
-    puts (estimate.aborted? ? "Failed": "Success")
+    puts (estimate.aborted ? "Failed": "Success")
     puts "True error = #{error} after #{estimate.call_cnt} calls."
     puts estimate
 
@@ -47,7 +47,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/romberg_integral.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ericboesch/romberg_integral.
 
 ## License
 
