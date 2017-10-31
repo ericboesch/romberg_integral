@@ -1,8 +1,7 @@
-# RombergIntegral
+# Romberg Integral
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/romberg_integral`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A pure Ruby implementation of Romberg numerical integration in one
+variable.
 
 ## Installation
 
@@ -22,7 +21,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    require "romberg_integral"
+
+    # Numerically integrate 1/x between 1 and 10
+    ri = RombergIntegral.new
+
+    # If you wish to change the error thresholds from their default values:
+    ri.max_call_cnt = 1025
+    ri.min_call_cnt = 9
+    ri.relative_error = 1e-9
+    ri.absolute_error = 1e-40
+
+    estimate = ri.integral(1, 10) { |x| 1.0/x }
+    actual = Math.log 10
+    error = (actual - estimate.value).abs
+    puts (estimate.aborted? ? "Failed": "Success")
+    puts "True error = #{error} after #{estimate.call_cnt} calls."
+    puts estimate
 
 ## Development
 
